@@ -78,3 +78,5 @@ Created by FalloutGhoulBusta
 - Leverages Matplotlib for visualization capabilities
 # Additional notes
 # Final
+
+<!-- Aug18 polish overview -->
