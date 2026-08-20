@@ -67,3 +67,5 @@ print("Noise comparison saved to noise_comparison.png")
 print("\nNoise levels (Sigma):")
 for data in processed_data:
     print(f"{data['label']}: {data['sigma']:.4f}")
+
+# Aug20: noise threshold configuration
