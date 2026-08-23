@@ -69,3 +69,5 @@ for data in processed_data:
     print(f"{data['label']}: {data['sigma']:.4f}")
 
 # Aug20: noise threshold configuration
+
+# Aug23: batch processing
