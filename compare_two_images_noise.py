@@ -73,3 +73,5 @@ for data in processed_data:
 # Aug23: batch processing
 
 # Aug26: CSV and JSON output
+
+# Aug29: optimize detection
