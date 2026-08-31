@@ -80,3 +80,5 @@ Created by FalloutGhoulBusta
 # Final
 
 <!-- Aug18 polish overview -->
+
+<!-- Aug31 final examples -->
