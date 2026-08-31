@@ -1,84 +1,41 @@
 # Image Noise Analysis
 
-A Python-based toolkit for analyzing and comparing noise levels in digital images, specifically designed for comparing noise between different image resolutions.
+Python toolkit for estimating and comparing noise between 2K and 4K image crops via Gaussian blur differencing. Ships with sample crops and a one-command matplotlib demo.
 
-## Overview
+## What it does
 
-This project provides tools to:
-- Quantitatively measure noise levels in digital images
-- Compare noise characteristics between different resolution images (2K vs 4K)
-- Visualize noise patterns through image processing techniques
-- Generate side-by-side comparisons with noise metrics
+Estimates noise by blurring a grayscale crop, subtracting from the original, and measuring the standard deviation of the difference. Designed to compare noise characteristics between resolutions — e.g., `your_2k_crop.jpg` vs `your_4k_crop.jpg` — and display both with per-image metrics side-by-side.
 
 ## Features
 
-- **Noise Estimation**: Uses Gaussian blur and difference calculation to estimate noise levels
-- **Resolution Comparison**: Specialized for comparing noise between 2K and 4K images
-- **Visualization**: Generates visual representations of noise patterns
-- **Side-by-Side Comparison**: Displays both images with their noise metrics
-- **Image Processing**: Utilizes advanced image processing techniques for accurate noise analysis
+- **Gaussian blur differencing** — blur, subtract, measure stddev for noise score
+- **2K vs 4K comparison** — side-by-side matplotlib view with noise levels in titles
+- **Zero-config demo** — sample crops included, works out-of-box
 
-## Technical Details
+## Quick Start
 
-The noise estimation algorithm works by:
-1. Applying a Gaussian blur to reduce high-frequency noise
-2. Calculating the difference between the original and blurred image
-3. Measuring the standard deviation of the difference to quantify noise
+```bash
+pip install -r requirements.txt
+python compare_two_images_noise.py
+```
 
-## Requirements
+Edit `image_2k_path` / `image_4k_path` at the top of `compare_two_images_noise.py` to use your own images, or keep the defaults.
 
-- Python 3.x
-- Required packages:
-  - Pillow (PIL) - For image handling
-  - NumPy - For numerical operations
-  - OpenCV - For image processing
-  - Matplotlib - For visualization
+## Stack
 
-## Installation
+Python 3, OpenCV (`cv2.GaussianBlur`), Pillow, NumPy, matplotlib
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/FalloutGhoulBusta/image-noise-analysis.git
-   ```
+## Structure
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```
+image-noise-analysis/
+├── compare_two_images_noise.py — main script (grayscale load → blur → diff → stddev → plot)
+├── requirements.txt — numpy, opencv-python, Pillow, matplotlib
+├── your_2k_crop.jpg / your_4k_crop.jpg — sample inputs
+├── .github/ISSUE_TEMPLATE/ — bug/feature templates
+└── CODE_OF_CONDUCT.md / CONTRIBUTING.md / SECURITY.md
+```
 
-## Usage
+## License
 
-1. Place your image files in the same directory as the scripts
-2. Update the image paths in the scripts to point to your images
-3. Run the comparison script:
-   ```bash
-   python compare_two_images_noise.py
-   ```
-
-The script will:
-- Load your images in grayscale
-- Calculate noise levels for both images
-- Generate a side-by-side comparison
-- Display the results in a window
-
-## Scripts
-
-- `compare_two_images_noise.py`: Main script for comparing noise between 2K and 4K images
-- `image_noise_generator.py`: Generates noise analysis for a single image
-- `image_noise_estimater.py`: Core noise estimation functionality
-
-## Author
-
-Created by FalloutGhoulBusta
-
-## Acknowledgments
-
-- Uses OpenCV for image processing
-- Utilizes NumPy for efficient numerical computations
-- Leverages Matplotlib for visualization capabilities
-# Additional notes
-# Final
-
-<!-- Aug18 polish overview -->
-
-<!-- Aug31 final examples -->
+Apache 2.0 — see `LICENSE` (Copyright 2026 Mayukh Karmakar). Originally `FalloutGhoulBusta`.
