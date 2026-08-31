@@ -11,3 +11,6 @@ output/
 *.csv
 *.json
 noise_output/
+
+# Aug31 output files
+output/
